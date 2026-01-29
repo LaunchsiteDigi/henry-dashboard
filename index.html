@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Henry Dashboard - Launchsite Digital</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="app">
+        <!-- Header -->
+        <header class="header">
+            <div class="header-content">
+                <h1>Henry Dashboard</h1>
+                <div class="goal-progress">
+                    <span>$1M Goal: </span>
+                    <div class="progress-bar">
+                        <div class="progress-fill" style="width: 8%"></div>
+                    </div>
+                    <span>$83K/mo needed</span>
+                </div>
+            </div>
+        </header>
+
+        <!-- Main Content Area -->
+        <main class="main-content">
+            <!-- Lowe's Tab -->
+            <section id="lowes" class="tab-content active">
+                <h2>🏪 Lowe's</h2>
+                <div class="card">
+                    <h3>Today's Shift</h3>
+                    <p><strong>05:00 - 16:00</strong> (ASM687)</p>
+                    <p>Available after: 16:30 - 19:00</p>
+                </div>
+                <div class="card">
+                    <h3>Store Manager Goal</h3>
+                    <div class="progress-item">
+                        <span>Performance Reviews</span>
+                        <div class="mini-progress">
+                            <div class="mini-progress-fill" style="width: 75%"></div>
+                        </div>
+                    </div>
+                </div>
+                <div class="task-list">
+                    <h3>Today's Tasks</h3>
+                    <div class="task-item">
+                        <input type="checkbox" id="task1">
+                        <label for="task1">Check merchandising displays</label>
+                    </div>
+                    <div class="task-item">
+                        <input type="checkbox" id="task2">
+                        <label for="task2">Update team schedule</label>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Renew Tab -->
+            <section id="renew" class="tab-content">
+                <h2>💪 Renew Weight Loss</h2>
+                <div class="card">
+                    <h3>Clinic Locations</h3>
+                    <div class="location-item">
+                        <span>League City</span>
+                        <span class="status active">Active</span>
+                    </div>
+                    <div class="location-item">
+                        <span>Pearland</span>
+                        <span class="status opening">Opening Soon</span>
+                    </div>
+                    <div class="location-item">
+                        <span>Kemah/Seabrook</span>
+                        <span class="status planned">Planned (May)</span>
+                    </div>
+                </div>
+                <div class="card">
+                    <h3>Partners</h3>
+                    <p>Tom Smith, Kate, Arelys</p>
+                </div>
+            </section>
+
+            <!-- Trinity Tab -->
+            <section id="trinity" class="tab-content">
+                <h2>🏠 Trinity Exterior</h2>
+                <div class="card">
+                    <h3>Omar's Projects</h3>
+                    <p>Largest client - doors, windows, roofing, siding</p>
+                </div>
+                <div class="card">
+                    <h3>Review Automation</h3>
+                    <p>Status: In Development</p>
+                    <button class="btn-primary">Build n8n Flow</button>
+                </div>
+            </section>
+
+            <!-- Launchsite Tab -->
+            <section id="launchsite" class="tab-content">
+                <h2>🚀 Launchsite Digital</h2>
+                <div class="card">
+                    <h3>Revenue Goal</h3>
+                    <p><strong>Target:</strong> $600K (60% of $1M)</p>
+                    <div class="progress-bar">
+                        <div class="progress-fill" style="width: 12%"></div>
+                    </div>
+                </div>
+                <div class="card">
+                    <h3>Current Projects</h3>
+                    <div class="project-item">SeafoodLady502 - Lead capture MVP</div>
+                    <div class="project-item">Trinity Review System</div>
+                </div>
+            </section>
+
+            <!-- Personal Tab -->
+            <section id="personal" class="tab-content">
+                <h2>👤 Personal</h2>
+                <div class="card">
+                    <h3>Family</h3>
+                    <p>Patrice - Anniversary: Feb 10</p>
+                </div>
+                <div class="card">
+                    <h3>Health Check</h3>
+                    <p>Status: Sick today - take it easy</p>
+                </div>
+                <div class="card">
+                    <h3>Cardinals</h3>
+                    <p>Off-season - draft prep</p>
+                </div>
+            </section>
+
+            <!-- Chat Interface -->
+            <div id="chat" class="chat-overlay hidden">
+                <div class="chat-header">
+                    <h3>💬 Chat with Henry</h3>
+                    <button id="close-chat">×</button>
+                </div>
+                <div class="chat-messages" id="chat-messages">
+                    <div class="message henry">
+                        <div class="message-content">
+                            Hello! How can I help you today?
+                        </div>
+                        <div class="message-time">2:02 PM</div>
+                    </div>
+                </div>
+                <div class="chat-input">
+                    <input type="text" id="message-input" placeholder="Type a message...">
+                    <button id="send-message">Send</button>
+                </div>
+            </div>
+        </main>
+
+        <!-- Bottom Navigation -->
+        <nav class="bottom-nav">
+            <button class="nav-item active" data-tab="lowes">
+                <span class="nav-icon">🏪</span>
+                <span class="nav-label">Lowe's</span>
+            </button>
+            <button class="nav-item" data-tab="renew">
+                <span class="nav-icon">💪</span>
+                <span class="nav-label">Renew</span>
+            </button>
+            <button class="nav-item" data-tab="trinity">
+                <span class="nav-icon">🏠</span>
+                <span class="nav-label">Trinity</span>
+            </button>
+            <button class="nav-item" data-tab="launchsite">
+                <span class="nav-icon">🚀</span>
+                <span class="nav-label">Launchsite</span>
+            </button>
+            <button class="nav-item" data-tab="personal">
+                <span class="nav-icon">👤</span>
+                <span class="nav-label">Personal</span>
+            </button>
+        </nav>
+
+        <!-- Floating Action Button -->
+        <button class="fab" id="open-chat">💬</button>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
