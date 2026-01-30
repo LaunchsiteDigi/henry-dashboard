@@ -11,171 +11,310 @@
 </head>
 <body>
     <div class="app">
-        <!-- Header -->
-        <header class="header">
-            <div class="header-content">
-                <h1>Henry Dashboard</h1>
-                <div class="goal-progress">
-                    <span>$1M Goal: </span>
-                    <div class="progress-bar">
-                        <div class="progress-fill" style="width: 8%"></div>
-                    </div>
-                    <span>$83K/mo needed</span>
+        <!-- Sidebar Navigation -->
+        <aside class="sidebar">
+            <div class="sidebar-header">
+                <div class="logo">
+                    <span class="logo-icon">🦅</span>
+                    <span class="logo-text">Henry</span>
                 </div>
             </div>
-        </header>
+            
+            <nav class="sidebar-nav">
+                <div class="nav-section">
+                    <div class="nav-item active" data-tab="dashboard">
+                        <span class="nav-icon">📊</span>
+                        <span class="nav-text">Dashboard</span>
+                    </div>
+                    <div class="nav-item" data-tab="projects">
+                        <span class="nav-icon">📋</span>
+                        <span class="nav-text">Projects</span>
+                    </div>
+                    <div class="nav-item" data-tab="tasks">
+                        <span class="nav-icon">✅</span>
+                        <span class="nav-text">My Tasks</span>
+                    </div>
+                    <div class="nav-item" data-tab="chats">
+                        <span class="nav-icon">💬</span>
+                        <span class="nav-text">Chats</span>
+                    </div>
+                    <div class="nav-item" data-tab="documents">
+                        <span class="nav-icon">📄</span>
+                        <span class="nav-text">Documents</span>
+                    </div>
+                </div>
+                
+                <div class="nav-section">
+                    <div class="section-header">Projects</div>
+                    <div class="nav-item project-item" data-project="lowes">
+                        <span class="project-color lowes"></span>
+                        <span class="nav-text">Lowe's Career</span>
+                    </div>
+                    <div class="nav-item project-item" data-project="renew">
+                        <span class="project-color renew"></span>
+                        <span class="nav-text">Renew Weight Loss</span>
+                    </div>
+                    <div class="nav-item project-item" data-project="trinity">
+                        <span class="project-color trinity"></span>
+                        <span class="nav-text">Trinity Exterior</span>
+                    </div>
+                    <div class="nav-item project-item" data-project="launchsite">
+                        <span class="project-color launchsite"></span>
+                        <span class="nav-text">Launchsite Digital</span>
+                    </div>
+                    <div class="nav-item project-item" data-project="personal">
+                        <span class="project-color personal"></span>
+                        <span class="nav-text">Personal</span>
+                    </div>
+                </div>
+
+                <div class="sidebar-bottom">
+                    <div class="nav-item">
+                        <span class="nav-icon">⚙️</span>
+                        <span class="nav-text">Settings</span>
+                    </div>
+                    <div class="nav-item">
+                        <span class="nav-icon">❓</span>
+                        <span class="nav-text">Help & Support</span>
+                        <span class="help-badge">8</span>
+                    </div>
+                </div>
+            </nav>
+        </aside>
 
         <!-- Main Content Area -->
-        <main class="main-content">
-            <!-- Lowe's Tab -->
-            <section id="lowes" class="tab-content active">
-                <h2>🏪 Lowe's</h2>
-                <div class="card">
-                    <h3>Today's Shift</h3>
-                    <p><strong>05:00 - 16:00</strong> (ASM687)</p>
-                    <p>Available after: 16:30 - 19:00</p>
+        <main class="main-container">
+            <!-- Top Header -->
+            <header class="top-header">
+                <div class="header-left">
+                    <button class="menu-toggle">☰</button>
+                    <div class="search-container">
+                        <input type="text" placeholder="Search or type a command" class="search-input">
+                        <span class="search-shortcut">⌘F</span>
+                    </div>
                 </div>
-                <div class="card">
-                    <h3>Store Manager Goal</h3>
-                    <div class="progress-item">
-                        <span>Performance Reviews</span>
-                        <div class="mini-progress">
-                            <div class="mini-progress-fill" style="width: 75%"></div>
+                <div class="header-right">
+                    <button class="btn-primary">+ New Project</button>
+                    <div class="notifications">🔔</div>
+                    <div class="user-avatar">C</div>
+                </div>
+            </header>
+
+            <!-- Content Area -->
+            <div class="content-wrapper">
+                <!-- Dashboard Tab -->
+                <section id="dashboard" class="tab-content active">
+                    <div class="page-header">
+                        <h1>Good Evening! Cleighton,</h1>
+                        <div class="date-info">Wednesday, 29th January</div>
+                        <div class="action-buttons">
+                            <button class="btn-secondary">📤 Share</button>
+                            <button class="btn-primary">+ Add Task</button>
                         </div>
                     </div>
-                </div>
-                <div class="task-list">
-                    <h3>Today's Tasks</h3>
-                    <div class="task-item">
-                        <input type="checkbox" id="task1">
-                        <label for="task1">Check merchandising displays</label>
-                    </div>
-                    <div class="task-item">
-                        <input type="checkbox" id="task2">
-                        <label for="task2">Update team schedule</label>
-                    </div>
-                </div>
-            </section>
 
-            <!-- Renew Tab -->
-            <section id="renew" class="tab-content">
-                <h2>💪 Renew Weight Loss</h2>
-                <div class="card">
-                    <h3>Clinic Locations</h3>
-                    <div class="location-item">
-                        <span>League City</span>
-                        <span class="status active">Active</span>
-                    </div>
-                    <div class="location-item">
-                        <span>Pearland</span>
-                        <span class="status opening">Opening Soon</span>
-                    </div>
-                    <div class="location-item">
-                        <span>Kemah/Seabrook</span>
-                        <span class="status planned">Planned (May)</span>
-                    </div>
-                </div>
-                <div class="card">
-                    <h3>Partners</h3>
-                    <p>Tom Smith, Kate, Arelys</p>
-                </div>
-            </section>
-
-            <!-- Trinity Tab -->
-            <section id="trinity" class="tab-content">
-                <h2>🏠 Trinity Exterior</h2>
-                <div class="card">
-                    <h3>Omar's Projects</h3>
-                    <p>Largest client - doors, windows, roofing, siding</p>
-                </div>
-                <div class="card">
-                    <h3>Review Automation</h3>
-                    <p>Status: In Development</p>
-                    <button class="btn-primary">Build n8n Flow</button>
-                </div>
-            </section>
-
-            <!-- Launchsite Tab -->
-            <section id="launchsite" class="tab-content">
-                <h2>🚀 Launchsite Digital</h2>
-                <div class="card">
-                    <h3>Revenue Goal</h3>
-                    <p><strong>Target:</strong> $600K (60% of $1M)</p>
-                    <div class="progress-bar">
-                        <div class="progress-fill" style="width: 12%"></div>
-                    </div>
-                </div>
-                <div class="card">
-                    <h3>Current Projects</h3>
-                    <div class="project-item">SeafoodLady502 - Lead capture MVP</div>
-                    <div class="project-item">Trinity Review System</div>
-                </div>
-            </section>
-
-            <!-- Personal Tab -->
-            <section id="personal" class="tab-content">
-                <h2>👤 Personal</h2>
-                <div class="card">
-                    <h3>Family</h3>
-                    <p>Patrice - Anniversary: Feb 10</p>
-                </div>
-                <div class="card">
-                    <h3>Health Check</h3>
-                    <p>Status: Sick today - take it easy</p>
-                </div>
-                <div class="card">
-                    <h3>Cardinals</h3>
-                    <p>Off-season - draft prep</p>
-                </div>
-            </section>
-
-            <!-- Chat Interface -->
-            <div id="chat" class="chat-overlay hidden">
-                <div class="chat-header">
-                    <h3>💬 Chat with Henry</h3>
-                    <button id="close-chat">×</button>
-                </div>
-                <div class="chat-messages" id="chat-messages">
-                    <div class="message henry">
-                        <div class="message-content">
-                            Hello! How can I help you today?
+                    <div class="stats-row">
+                        <div class="stat-card">
+                            <span class="stat-icon">⏰</span>
+                            <span class="stat-value">8hrs</span>
+                            <span class="stat-label">Time Saved</span>
                         </div>
-                        <div class="message-time">2:02 PM</div>
+                        <div class="stat-card">
+                            <span class="stat-icon">✅</span>
+                            <span class="stat-value">12</span>
+                            <span class="stat-label">Projects Completed</span>
+                        </div>
+                        <div class="stat-card">
+                            <span class="stat-icon">🎯</span>
+                            <span class="stat-value">3</span>
+                            <span class="stat-label">Projects In-progress</span>
+                        </div>
                     </div>
-                </div>
-                <div class="chat-input">
-                    <input type="text" id="message-input" placeholder="Type a message...">
-                    <button id="send-message">Send</button>
-                </div>
+
+                    <div class="dashboard-grid">
+                        <!-- My Projects Table -->
+                        <div class="section-card">
+                            <div class="section-header">
+                                <span class="section-title">My Projects</span>
+                                <select class="filter-dropdown">
+                                    <option>This Week</option>
+                                    <option>This Month</option>
+                                    <option>All Time</option>
+                                </select>
+                                <span class="see-all">See All</span>
+                            </div>
+                            <div class="project-table">
+                                <div class="table-header">
+                                    <div class="col-task">📝 Task Name</div>
+                                    <div class="col-assign">👥 Assign</div>
+                                    <div class="col-status">🏷️ Status</div>
+                                </div>
+                                <div class="table-row">
+                                    <div class="col-task">
+                                        <div class="task-info">
+                                            <span class="task-icon">🏪</span>
+                                            Review Trinity email automation
+                                        </div>
+                                        <div class="task-meta">👁️ 7 💬 2</div>
+                                    </div>
+                                    <div class="col-assign">
+                                        <div class="assignee">
+                                            <div class="avatar henry">H</div>
+                                            Henry
+                                        </div>
+                                    </div>
+                                    <div class="col-status">
+                                        <span class="status-badge in-progress">In Progress</span>
+                                    </div>
+                                </div>
+                                <div class="table-row">
+                                    <div class="col-task">
+                                        <div class="task-info">
+                                            <span class="task-icon">💪</span>
+                                            Plan Pearland clinic opening
+                                        </div>
+                                        <div class="task-meta">👁️ 10 💬 3</div>
+                                    </div>
+                                    <div class="col-assign">
+                                        <div class="assignee">
+                                            <div class="avatar cleighton">C</div>
+                                            Cleighton
+                                        </div>
+                                    </div>
+                                    <div class="col-status">
+                                        <span class="status-badge pending">Pending</span>
+                                    </div>
+                                </div>
+                                <div class="table-row">
+                                    <div class="col-task">
+                                        <div class="task-info">
+                                            <span class="task-icon">🚀</span>
+                                            Deploy SeafoodLady502 MVP
+                                        </div>
+                                        <div class="task-meta">👁️ 5 💬 8</div>
+                                    </div>
+                                    <div class="col-assign">
+                                        <div class="assignee">
+                                            <div class="avatar henry">H</div>
+                                            Henry
+                                        </div>
+                                    </div>
+                                    <div class="col-status">
+                                        <span class="status-badge completed">Completed</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Schedule Widget -->
+                        <div class="section-card">
+                            <div class="section-header">
+                                <span class="section-title">📅 Schedule</span>
+                            </div>
+                            <div class="schedule-grid">
+                                <div class="day-item">
+                                    <div class="day-header">Mo<br><span class="day-number">27</span></div>
+                                </div>
+                                <div class="day-item">
+                                    <div class="day-header">Tu<br><span class="day-number">28</span></div>
+                                </div>
+                                <div class="day-item current">
+                                    <div class="day-header">We<br><span class="day-number">29</span></div>
+                                </div>
+                                <div class="day-item">
+                                    <div class="day-header">Th<br><span class="day-number">30</span></div>
+                                </div>
+                                <div class="day-item">
+                                    <div class="day-header">Fr<br><span class="day-number">31</span></div>
+                                </div>
+                                <div class="day-item weekend">
+                                    <div class="day-header">Sa<br><span class="day-number">1</span></div>
+                                </div>
+                                <div class="day-item weekend">
+                                    <div class="day-header">Su<br><span class="day-number">2</span></div>
+                                </div>
+                            </div>
+                            
+                            <div class="schedule-events">
+                                <div class="event-item">
+                                    <span class="event-time">05:00 PM to 16:00 PM</span>
+                                    <span class="event-title">🏪 Lowe's Shift (Tomorrow)</span>
+                                    <div class="event-attendees">
+                                        <div class="avatar-small cleighton">C</div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Notes Widget -->
+                        <div class="section-card">
+                            <div class="section-header">
+                                <span class="section-title">📝 Notes</span>
+                            </div>
+                            <div class="notes-list">
+                                <div class="note-item">
+                                    <div class="note-circle completed"></div>
+                                    <div class="note-text">Dashboard design updated to Monday.com style</div>
+                                </div>
+                                <div class="note-item">
+                                    <div class="note-circle pending"></div>
+                                    <div class="note-text">Omar review automation - follow up on n8n flow progress</div>
+                                </div>
+                                <div class="note-item">
+                                    <div class="note-circle pending"></div>
+                                    <div class="note-text">Pearland clinic opening timeline needs partner coordination</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- Other tabs content (simplified for now) -->
+                <section id="projects" class="tab-content">
+                    <div class="page-header">
+                        <h1>Projects Overview</h1>
+                    </div>
+                    <div class="projects-grid">
+                        <!-- Projects will go here -->
+                    </div>
+                </section>
+
+                <section id="tasks" class="tab-content">
+                    <div class="page-header">
+                        <h1>My Tasks</h1>
+                    </div>
+                    <!-- Tasks will go here -->
+                </section>
+
+                <section id="chats" class="tab-content">
+                    <div class="page-header">
+                        <h1>Chat with Henry</h1>
+                    </div>
+                    <div class="chat-interface">
+                        <div class="chat-messages" id="chat-messages">
+                            <div class="message henry">
+                                <div class="message-avatar">H</div>
+                                <div class="message-content">
+                                    <div class="message-text">Hello! How can I help you today?</div>
+                                    <div class="message-time">9:44 PM</div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="chat-input-area">
+                            <input type="text" id="message-input" placeholder="Type a message...">
+                            <button id="send-message">Send</button>
+                        </div>
+                    </div>
+                </section>
+
+                <section id="documents" class="tab-content">
+                    <div class="page-header">
+                        <h1>Documents</h1>
+                    </div>
+                    <!-- Documents will go here -->
+                </section>
             </div>
         </main>
-
-        <!-- Bottom Navigation -->
-        <nav class="bottom-nav">
-            <button class="nav-item active" data-tab="lowes">
-                <span class="nav-icon">🏪</span>
-                <span class="nav-label">Lowe's</span>
-            </button>
-            <button class="nav-item" data-tab="renew">
-                <span class="nav-icon">💪</span>
-                <span class="nav-label">Renew</span>
-            </button>
-            <button class="nav-item" data-tab="trinity">
-                <span class="nav-icon">🏠</span>
-                <span class="nav-label">Trinity</span>
-            </button>
-            <button class="nav-item" data-tab="launchsite">
-                <span class="nav-icon">🚀</span>
-                <span class="nav-label">Launchsite</span>
-            </button>
-            <button class="nav-item" data-tab="personal">
-                <span class="nav-icon">👤</span>
-                <span class="nav-label">Personal</span>
-            </button>
-        </nav>
-
-        <!-- Floating Action Button -->
-        <button class="fab" id="open-chat">💬</button>
     </div>
 
     <script src="script.js"></script>
