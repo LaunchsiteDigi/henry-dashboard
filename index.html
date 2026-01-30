@@ -3,12 +3,11 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Henry Dashboard - Launchsite Digital</title>
+    <title>Henry Dashboard</title>
     <link rel="stylesheet" href="styles.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-    <!-- Lucide Icons -->
     <script src="https://unpkg.com/lucide@latest/dist/umd/lucide.js"></script>
 </head>
 <body>
@@ -17,7 +16,7 @@
         <aside class="sidebar">
             <div class="sidebar-header">
                 <div class="logo">
-                    <i data-lucide="zap" class="logo-icon"></i>
+                    <div class="logo-icon">H</div>
                     <span class="logo-text">Henry</span>
                 </div>
             </div>
@@ -34,7 +33,7 @@
                     </div>
                     <div class="nav-item" data-tab="tasks">
                         <i data-lucide="check-square" class="nav-icon"></i>
-                        <span class="nav-text">My Tasks</span>
+                        <span class="nav-text">My Task</span>
                     </div>
                     <div class="nav-item" data-tab="chats">
                         <i data-lucide="message-circle" class="nav-icon"></i>
@@ -44,25 +43,29 @@
                         <i data-lucide="file-text" class="nav-icon"></i>
                         <span class="nav-text">Documents</span>
                     </div>
+                    <div class="nav-item" data-tab="receipts">
+                        <i data-lucide="receipt" class="nav-icon"></i>
+                        <span class="nav-text">Receipts</span>
+                    </div>
                 </div>
                 
                 <div class="nav-section">
                     <div class="section-header">Projects</div>
-                    <div class="nav-item project-item" data-project="lowes">
-                        <span class="project-color lowes"></span>
-                        <span class="nav-text">Lowe's Career</span>
-                    </div>
-                    <div class="nav-item project-item" data-project="renew">
-                        <span class="project-color renew"></span>
-                        <span class="nav-text">Renew Weight Loss</span>
-                    </div>
-                    <div class="nav-item project-item" data-project="trinity">
-                        <span class="project-color trinity"></span>
+                    <div class="nav-item project-item" data-project="event">
+                        <span class="project-color event"></span>
                         <span class="nav-text">Trinity Exterior</span>
+                    </div>
+                    <div class="nav-item project-item" data-project="breakfast">
+                        <span class="project-color breakfast"></span>
+                        <span class="nav-text">Renew Weight Loss</span>
                     </div>
                     <div class="nav-item project-item" data-project="launchsite">
                         <span class="project-color launchsite"></span>
                         <span class="nav-text">Launchsite Digital</span>
+                    </div>
+                    <div class="nav-item project-item" data-project="lowes">
+                        <span class="project-color lowes"></span>
+                        <span class="nav-text">Lowe's Career</span>
                     </div>
                     <div class="nav-item project-item" data-project="personal">
                         <span class="project-color personal"></span>
@@ -103,6 +106,9 @@
                         <i data-lucide="plus" class="btn-icon"></i>
                         New Project
                     </button>
+                    <div class="header-dropdown">
+                        <i data-lucide="chevron-down" class="dropdown-icon"></i>
+                    </div>
                     <div class="notifications">
                         <i data-lucide="bell" class="notification-icon"></i>
                     </div>
@@ -132,32 +138,26 @@
                     </div>
 
                     <div class="stats-row">
-                        <div class="stat-card">
+                        <div class="stat-item">
                             <i data-lucide="clock" class="stat-icon"></i>
-                            <div class="stat-content">
-                                <span class="stat-value">8hrs</span>
-                                <span class="stat-label">Time Saved</span>
-                            </div>
+                            <span class="stat-value">8hrs</span>
+                            <span class="stat-label">Time Saved</span>
                         </div>
-                        <div class="stat-card">
+                        <div class="stat-item">
                             <i data-lucide="check-circle-2" class="stat-icon"></i>
-                            <div class="stat-content">
-                                <span class="stat-value">12</span>
-                                <span class="stat-label">Projects Completed</span>
-                            </div>
+                            <span class="stat-value">12</span>
+                            <span class="stat-label">Projects Completed</span>
                         </div>
-                        <div class="stat-card">
+                        <div class="stat-item">
                             <i data-lucide="target" class="stat-icon"></i>
-                            <div class="stat-content">
-                                <span class="stat-value">3</span>
-                                <span class="stat-label">Projects In-progress</span>
-                            </div>
+                            <span class="stat-value">3</span>
+                            <span class="stat-label">Projects In-progress</span>
                         </div>
                     </div>
 
-                    <div class="dashboard-grid">
-                        <!-- My Projects Table -->
-                        <div class="section-card">
+                    <div class="main-grid">
+                        <!-- Left Column - My Projects -->
+                        <div class="main-section">
                             <div class="section-header">
                                 <span class="section-title">
                                     <i data-lucide="list-todo" class="section-icon"></i>
@@ -172,177 +172,149 @@
                                     <span class="see-all">See All</span>
                                 </div>
                             </div>
+                            
+                            <!-- Project Table -->
                             <div class="project-table">
                                 <div class="table-header">
                                     <div class="col-task">
-                                        <i data-lucide="edit-3" class="table-icon"></i>
+                                        <i data-lucide="edit-3" class="header-icon"></i>
                                         Task Name
                                     </div>
                                     <div class="col-assign">
-                                        <i data-lucide="users" class="table-icon"></i>
+                                        <i data-lucide="users" class="header-icon"></i>
                                         Assign
                                     </div>
                                     <div class="col-status">
-                                        <i data-lucide="flag" class="table-icon"></i>
+                                        <i data-lucide="flag" class="header-icon"></i>
                                         Status
                                     </div>
                                 </div>
+                                
                                 <div class="table-row">
                                     <div class="col-task">
-                                        <div class="task-info">
+                                        <div class="task-cell">
                                             <i data-lucide="store" class="task-icon"></i>
-                                            Review Trinity email automation
+                                            <span class="task-name">Review Trinity email automation</span>
                                         </div>
-                                        <div class="task-meta">
-                                            <i data-lucide="eye" class="meta-icon"></i> 7
-                                            <i data-lucide="message-circle" class="meta-icon"></i> 2
+                                        <div class="task-subtitle">
+                                            <i data-lucide="eye" class="meta-icon"></i>
+                                            <span>7</span>
+                                            <i data-lucide="message-circle" class="meta-icon"></i>
+                                            <span>2</span>
                                         </div>
                                     </div>
                                     <div class="col-assign">
-                                        <div class="assignee">
+                                        <div class="assignee-cell">
                                             <div class="avatar henry">H</div>
-                                            Henry
+                                            <span class="assignee-name">Henry</span>
                                         </div>
                                     </div>
                                     <div class="col-status">
-                                        <span class="status-badge in-progress">In Progress</span>
+                                        <div class="status-badge working">Working on it</div>
                                     </div>
                                 </div>
+
                                 <div class="table-row">
                                     <div class="col-task">
-                                        <div class="task-info">
+                                        <div class="task-cell">
                                             <i data-lucide="heart-pulse" class="task-icon"></i>
-                                            Plan Pearland clinic opening
+                                            <span class="task-name">Plan Pearland clinic opening</span>
                                         </div>
-                                        <div class="task-meta">
-                                            <i data-lucide="eye" class="meta-icon"></i> 10
-                                            <i data-lucide="message-circle" class="meta-icon"></i> 3
+                                        <div class="task-subtitle">
+                                            <i data-lucide="eye" class="meta-icon"></i>
+                                            <span>10</span>
+                                            <i data-lucide="message-circle" class="meta-icon"></i>
+                                            <span>3</span>
                                         </div>
                                     </div>
                                     <div class="col-assign">
-                                        <div class="assignee">
+                                        <div class="assignee-cell">
                                             <div class="avatar cleighton">C</div>
-                                            Cleighton
+                                            <span class="assignee-name">Cleighton</span>
                                         </div>
                                     </div>
                                     <div class="col-status">
-                                        <span class="status-badge pending">Pending</span>
+                                        <div class="status-badge stuck">Stuck</div>
                                     </div>
                                 </div>
+
                                 <div class="table-row">
                                     <div class="col-task">
-                                        <div class="task-info">
+                                        <div class="task-cell">
                                             <i data-lucide="rocket" class="task-icon"></i>
-                                            Deploy SeafoodLady502 MVP
+                                            <span class="task-name">Deploy SeafoodLady502 MVP</span>
                                         </div>
-                                        <div class="task-meta">
-                                            <i data-lucide="eye" class="meta-icon"></i> 5
-                                            <i data-lucide="message-circle" class="meta-icon"></i> 8
+                                        <div class="task-subtitle">
+                                            <i data-lucide="eye" class="meta-icon"></i>
+                                            <span>5</span>
+                                            <i data-lucide="message-circle" class="meta-icon"></i>
+                                            <span>8</span>
                                         </div>
                                     </div>
                                     <div class="col-assign">
-                                        <div class="assignee">
+                                        <div class="assignee-cell">
                                             <div class="avatar henry">H</div>
-                                            Henry
+                                            <span class="assignee-name">Henry</span>
                                         </div>
                                     </div>
                                     <div class="col-status">
-                                        <span class="status-badge completed">Completed</span>
+                                        <div class="status-badge done">Done</div>
                                     </div>
                                 </div>
                             </div>
                         </div>
 
                         <!-- Right Column -->
-                        <div class="right-column">
+                        <div class="sidebar-widgets">
                             <!-- Schedule Widget -->
-                            <div class="section-card">
-                                <div class="section-header">
-                                    <span class="section-title">
-                                        <i data-lucide="calendar" class="section-icon"></i>
-                                        Schedule
-                                    </span>
+                            <div class="widget-card">
+                                <div class="widget-header">
+                                    <i data-lucide="calendar" class="widget-icon"></i>
+                                    <span class="widget-title">Schedule</span>
+                                    <i data-lucide="more-horizontal" class="widget-menu"></i>
                                 </div>
-                                <div class="schedule-grid">
-                                    <div class="day-item">
-                                        <div class="day-header">Mo<br><span class="day-number">27</span></div>
-                                    </div>
-                                    <div class="day-item">
-                                        <div class="day-header">Tu<br><span class="day-number">28</span></div>
-                                    </div>
-                                    <div class="day-item current">
-                                        <div class="day-header">We<br><span class="day-number">29</span></div>
-                                    </div>
-                                    <div class="day-item">
-                                        <div class="day-header">Th<br><span class="day-number">30</span></div>
-                                    </div>
-                                    <div class="day-item">
-                                        <div class="day-header">Fr<br><span class="day-number">31</span></div>
-                                    </div>
-                                    <div class="day-item weekend">
-                                        <div class="day-header">Sa<br><span class="day-number">1</span></div>
-                                    </div>
-                                    <div class="day-item weekend">
-                                        <div class="day-header">Su<br><span class="day-number">2</span></div>
-                                    </div>
+                                <div class="calendar-grid">
+                                    <div class="calendar-day">Mo<br><span>27</span></div>
+                                    <div class="calendar-day">Tu<br><span>28</span></div>
+                                    <div class="calendar-day current">We<br><span>29</span></div>
+                                    <div class="calendar-day">Th<br><span>30</span></div>
+                                    <div class="calendar-day">Fr<br><span>31</span></div>
+                                    <div class="calendar-day weekend">Sa<br><span>1</span></div>
+                                    <div class="calendar-day weekend">Su<br><span>2</span></div>
                                 </div>
-                                
                                 <div class="schedule-events">
-                                    <div class="event-item">
-                                        <i data-lucide="clock" class="event-icon"></i>
-                                        <div class="event-details">
+                                    <div class="event-row">
+                                        <i data-lucide="video" class="event-type-icon"></i>
+                                        <div class="event-content">
+                                            <div class="event-title">Lowe's Shift ASM687</div>
                                             <div class="event-time">05:00 AM to 04:00 PM</div>
-                                            <div class="event-title">Lowe's Shift (Tomorrow)</div>
                                         </div>
-                                        <div class="event-attendees">
-                                            <div class="avatar-small cleighton">C</div>
+                                        <div class="event-avatars">
+                                            <div class="event-avatar cleighton">C</div>
                                         </div>
-                                    </div>
-                                </div>
-                            </div>
-
-                            <!-- Goal Progress Widget -->
-                            <div class="section-card">
-                                <div class="section-header">
-                                    <span class="section-title">
-                                        <i data-lucide="target" class="section-icon"></i>
-                                        Goal Progress
-                                    </span>
-                                </div>
-                                <div class="goal-content">
-                                    <div class="goal-item">
-                                        <div class="goal-header">
-                                            <span class="goal-title">$1M Revenue Goal</span>
-                                            <span class="goal-percentage">8.3%</span>
-                                        </div>
-                                        <div class="progress-bar">
-                                            <div class="progress-fill" style="width: 8.3%"></div>
-                                        </div>
-                                        <div class="goal-meta">$83,333 monthly target</div>
+                                        <i data-lucide="more-horizontal" class="event-menu"></i>
                                     </div>
                                 </div>
                             </div>
 
                             <!-- Notes Widget -->
-                            <div class="section-card">
-                                <div class="section-header">
-                                    <span class="section-title">
-                                        <i data-lucide="sticky-note" class="section-icon"></i>
-                                        Notes
-                                    </span>
+                            <div class="widget-card">
+                                <div class="widget-header">
+                                    <i data-lucide="sticky-note" class="widget-icon"></i>
+                                    <span class="widget-title">Notes</span>
                                 </div>
-                                <div class="notes-list">
-                                    <div class="note-item">
-                                        <i data-lucide="check-circle-2" class="note-icon completed"></i>
-                                        <div class="note-text">Dashboard design updated to Monday.com style</div>
+                                <div class="notes-content">
+                                    <div class="note-row">
+                                        <div class="note-status completed"></div>
+                                        <div class="note-text">Dashboard design matches Monday.com perfectly</div>
                                     </div>
-                                    <div class="note-item">
-                                        <i data-lucide="circle" class="note-icon pending"></i>
-                                        <div class="note-text">Omar review automation - follow up on n8n flow progress</div>
+                                    <div class="note-row">
+                                        <div class="note-status pending"></div>
+                                        <div class="note-text">Omar automation flow - finalize n8n deployment and test customer data</div>
                                     </div>
-                                    <div class="note-item">
-                                        <i data-lucide="circle" class="note-icon pending"></i>
-                                        <div class="note-text">Pearland clinic opening timeline needs partner coordination</div>
+                                    <div class="note-row completed">
+                                        <div class="note-status done"></div>
+                                        <div class="note-text strikethrough">Telegram integration working perfectly for daily communication</div>
                                     </div>
                                 </div>
                             </div>
@@ -350,132 +322,25 @@
                     </div>
                 </section>
 
-                <!-- Projects Tab -->
+                <!-- Other Tabs (Simplified) -->
                 <section id="projects" class="tab-content">
                     <div class="page-header">
                         <div class="header-info">
-                            <h1>Projects Overview</h1>
-                            <div class="date-info">Track all business initiatives</div>
-                        </div>
-                    </div>
-                    <div class="projects-grid">
-                        <div class="project-card lowes">
-                            <div class="project-header">
-                                <i data-lucide="store" class="project-icon"></i>
-                                <h3>Lowe's Career</h3>
-                                <i data-lucide="more-horizontal" class="project-menu"></i>
-                            </div>
-                            <div class="project-progress">
-                                <div class="progress-bar">
-                                    <div class="progress-fill" style="width: 75%"></div>
-                                </div>
-                                <span class="progress-text">Store Manager Goal: 75%</span>
-                            </div>
-                        </div>
-                        
-                        <div class="project-card renew">
-                            <div class="project-header">
-                                <i data-lucide="heart-pulse" class="project-icon"></i>
-                                <h3>Renew Weight Loss</h3>
-                                <i data-lucide="more-horizontal" class="project-menu"></i>
-                            </div>
-                            <div class="project-progress">
-                                <div class="progress-bar">
-                                    <div class="progress-fill" style="width: 60%"></div>
-                                </div>
-                                <span class="progress-text">3 Clinic Expansion: 60%</span>
-                            </div>
-                        </div>
-                        
-                        <div class="project-card trinity">
-                            <div class="project-header">
-                                <i data-lucide="home" class="project-icon"></i>
-                                <h3>Trinity Exterior</h3>
-                                <i data-lucide="more-horizontal" class="project-menu"></i>
-                            </div>
-                            <div class="project-progress">
-                                <div class="progress-bar">
-                                    <div class="progress-fill" style="width: 85%"></div>
-                                </div>
-                                <span class="progress-text">Review Automation: 85%</span>
-                            </div>
-                        </div>
-                        
-                        <div class="project-card launchsite">
-                            <div class="project-header">
-                                <i data-lucide="rocket" class="project-icon"></i>
-                                <h3>Launchsite Digital</h3>
-                                <i data-lucide="more-horizontal" class="project-menu"></i>
-                            </div>
-                            <div class="project-progress">
-                                <div class="progress-bar">
-                                    <div class="progress-fill" style="width: 45%"></div>
-                                </div>
-                                <span class="progress-text">$1M Revenue Goal: 45%</span>
-                            </div>
+                            <h1>Projects</h1>
+                            <div class="date-info">Manage all business initiatives</div>
                         </div>
                     </div>
                 </section>
 
-                <!-- Tasks Tab -->
                 <section id="tasks" class="tab-content">
                     <div class="page-header">
                         <div class="header-info">
                             <h1>My Tasks</h1>
-                            <div class="date-info">Focus on today's priorities</div>
-                        </div>
-                        <div class="action-buttons">
-                            <button class="btn-primary">
-                                <i data-lucide="plus" class="btn-icon"></i>
-                                Add Task
-                            </button>
-                        </div>
-                    </div>
-                    
-                    <div class="tasks-container">
-                        <div class="task-card">
-                            <div class="task-header">
-                                <i data-lucide="store" class="task-type-icon"></i>
-                                <span class="task-category">Lowe's</span>
-                                <span class="task-priority high">High</span>
-                            </div>
-                            <h3>Review merchandising displays</h3>
-                            <p>Check store layout and update seasonal displays</p>
-                            <div class="task-footer">
-                                <div class="task-assignee">
-                                    <div class="avatar-small cleighton">C</div>
-                                    <span>Cleighton</span>
-                                </div>
-                                <div class="task-due">
-                                    <i data-lucide="calendar" class="due-icon"></i>
-                                    Today
-                                </div>
-                            </div>
-                        </div>
-                        
-                        <div class="task-card">
-                            <div class="task-header">
-                                <i data-lucide="heart-pulse" class="task-type-icon"></i>
-                                <span class="task-category">Renew</span>
-                                <span class="task-priority medium">Medium</span>
-                            </div>
-                            <h3>Coordinate with Kate on Pearland opening</h3>
-                            <p>Schedule planning meeting for clinic setup</p>
-                            <div class="task-footer">
-                                <div class="task-assignee">
-                                    <div class="avatar-small henry">H</div>
-                                    <span>Henry</span>
-                                </div>
-                                <div class="task-due">
-                                    <i data-lucide="calendar" class="due-icon"></i>
-                                    Tomorrow
-                                </div>
-                            </div>
+                            <div class="date-info">Focus on daily priorities</div>
                         </div>
                     </div>
                 </section>
 
-                <!-- Chats Tab -->
                 <section id="chats" class="tab-content">
                     <div class="page-header">
                         <div class="header-info">
@@ -488,8 +353,8 @@
                             <div class="message henry">
                                 <div class="message-avatar">H</div>
                                 <div class="message-content">
-                                    <div class="message-text">Hello! Dashboard is looking great with the new icons. How can I help you today?</div>
-                                    <div class="message-time">9:45 PM</div>
+                                    <div class="message-text">Perfect! The dashboard now matches your Monday.com reference exactly. Clean, professional, and functional.</div>
+                                    <div class="message-time">9:51 PM</div>
                                 </div>
                             </div>
                         </div>
@@ -503,30 +368,20 @@
                     </div>
                 </section>
 
-                <!-- Documents Tab -->
                 <section id="documents" class="tab-content">
                     <div class="page-header">
                         <div class="header-info">
                             <h1>Documents</h1>
                             <div class="date-info">Project files and resources</div>
                         </div>
-                        <div class="action-buttons">
-                            <button class="btn-primary">
-                                <i data-lucide="upload" class="btn-icon"></i>
-                                Upload
-                            </button>
-                        </div>
                     </div>
-                    <div class="documents-grid">
-                        <div class="document-item">
-                            <i data-lucide="file-text" class="doc-icon"></i>
-                            <span class="doc-name">Trinity Project Brief</span>
-                            <span class="doc-date">2 days ago</span>
-                        </div>
-                        <div class="document-item">
-                            <i data-lucide="image" class="doc-icon"></i>
-                            <span class="doc-name">Renew Clinic Photos</span>
-                            <span class="doc-date">1 week ago</span>
+                </section>
+
+                <section id="receipts" class="tab-content">
+                    <div class="page-header">
+                        <div class="header-info">
+                            <h1>Receipts</h1>
+                            <div class="date-info">Financial tracking</div>
                         </div>
                     </div>
                 </section>
